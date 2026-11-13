@@ -1,0 +1,4 @@
+- insert:
+    - id: vertex-json
+      name: dsh-vertex-json
+      config: {}

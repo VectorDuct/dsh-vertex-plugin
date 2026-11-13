@@ -1,0 +1,7 @@
+{
+  "meta": {
+    "title": "Vertex AI (JSON)",
+    "description": "Use your Google Cloud service account with Vertex AI.",
+    "detail": "docs/DETAIL.md"
+  }
+}
