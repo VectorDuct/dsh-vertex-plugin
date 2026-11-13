@@ -1,9 +1,15 @@
-# Delivery verification
+# Development verification
 
-This source copy excludes deployment state, credentials, internal review notes and host-specific development paths. Runtime source and tests retain the original plugin implementation.
+Target runtime: DSH 0.2.2-rc.2 and Node.js 24.9+.
 
-Compatibility target: DSH 0.2.2-rc.2 and Node 24.9+. The included workflow is configuration, not a claim of a hosted Windows/Linux CI result.
+Run from the repository root:
 
-The delivery preparation runs typecheck, offline tests and a build using existing local dependencies, then creates a plugin package. Tests generate temporary synthetic RSA keys and mock external authentication/HTTP calls. No live Google credentials, authentication or model generation are used. Actual credential permissions, billing and model access remain unverified.
+```bash
+npm ci
+npm run typecheck
+npm test
+npm run build
+npm pack --dry-run
+```
 
-On 2026-11-13, Node 24.22.3 typecheck, all 36 offline tests, compilation and package creation passed for this delivery copy. The dependency lockfile contains no local file/link dependencies. No cloud authentication or generation was performed.
+The automated suite covers configuration, model discovery, protocol conversion, attachments, streaming, service-account validation, token refresh and sanitized errors. Tests use synthetic RSA keys and mocked authentication/HTTP responses. The repository workflow runs on Linux and Windows.
