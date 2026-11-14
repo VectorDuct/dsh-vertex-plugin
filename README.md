@@ -2,6 +2,8 @@
 
 **[简体中文](./README.zh-CN.md)**
 
+> **VectorDuct Primitive: Direct Cloud Bridge** ([vectorduct.com](https://vectorduct.com/#stack))
+
 A native Google Cloud Vertex AI provider plugin for DeepSeek Harness (DSH). Enables direct, tenant-isolated model inference against official Google Cloud Vertex AI endpoints using standard IAM service-account credentials (`BYOC`).
 
 ## Capabilities & Scope
@@ -43,11 +45,16 @@ npm pack
 ## Configuration & Usage
 
 1. **Authorize Service-Account Credentials**:
-   Open **Settings → Credentials** in DSH, select **Vertex AI (service-account JSON)**, and provide your Google Cloud IAM Service Account JSON key (via masked input or local host path) along with your GCP Project ID and region (defaults to the JSON's project ID and `global`).
+
+    Open **Settings → Credentials** in DSH, select **Vertex AI (service-account JSON)**, and provide your Google Cloud IAM Service Account JSON key (via masked input or local host path) along with your GCP Project ID and region (defaults to the JSON's project ID and `global`).
+
 2. **Configure Plugin Options**:
-   Navigate to **Plugins → Installed plugins → Vertex AI (JSON)** to adjust optional project/region overrides, sampling parameters, output token ceilings, or thinking budgets. Click **Refresh model catalog** to discover available Gemini models.
+
+    Navigate to **Plugins → Installed plugins → Vertex AI (JSON)** to adjust optional project/region overrides, sampling parameters, output token ceilings, or thinking budgets. Click **Refresh model catalog** to discover available Gemini models.
+
 3. **Run Inference**:
-   Select **Vertex AI (JSON)** and a Gemini model in DSH's model selector. Ensure the Vertex AI API (`aiplatform.googleapis.com`) is enabled on your Google Cloud project with active billing and appropriate IAM permissions (`roles/aiplatform.user`).
+
+    Select **Vertex AI (JSON)** and a Gemini model in DSH's model selector. Ensure the Vertex AI API (`aiplatform.googleapis.com`) is enabled on your Google Cloud project with active billing and appropriate IAM permissions (`roles/aiplatform.user`).
 
 ### Multimodal Attachment Bounds
 Images are normalized through DSH's attachment service with a limit of `4 MiB` per encoded image (pre-Base64) and `16 MiB` total Base64 image payload per request.

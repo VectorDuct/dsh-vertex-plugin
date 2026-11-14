@@ -2,6 +2,8 @@
 
 **[English](./README.md)**
 
+> **VectorDuct 核心原语：Direct Cloud Bridge（云端直连桥接层）** ([vectorduct.com](https://vectorduct.com/#stack))
+
 面向 DeepSeek Harness (DSH) 的原生 Google Cloud Vertex AI 接入插件。支持使用用户自有的 Google Cloud 项目与 IAM 服务账号 JSON 密钥（`BYOC`），直接连接 Google 官方 OAuth 2.0 与 Vertex AI 端点执行模型推理。
 
 ## 核心能力与兼容范围
@@ -43,11 +45,16 @@ npm pack
 ## 配置与使用
 
 1. **配置服务账号凭据**：
-   打开 DSH 的 **Settings → Credentials**，找到 **Vertex AI (service-account JSON)**，通过掩码输入框或宿主机文件路径导入 Google Cloud IAM 服务账号 JSON 密钥，并填写 Project ID 与 Region（留空则默认使用 JSON 内的项目 ID 与 `global` 区域）。
+
+    打开 DSH 的 **Settings → Credentials**，找到 **Vertex AI (service-account JSON)**，通过掩码输入框或宿主机文件路径导入 Google Cloud IAM 服务账号 JSON 密钥，并填写 Project ID 与 Region（留空则默认使用 JSON 内的项目 ID 与 `global` 区域）。
+
 2. **调整插件参数**：
-   进入 **Plugins → Installed plugins → Vertex AI (JSON)**，可按需配置项目/区域覆盖、采样温度、最大输出 Token 或思考预算。点击 **Refresh model catalog** 即可同步可用模型列表。
+
+    进入 **Plugins → Installed plugins → Vertex AI (JSON)**，可按需配置项目/区域覆盖、采样温度、最大输出 Token 或思考预算。点击 **Refresh model catalog** 即可同步可用模型列表。
+
 3. **选择模型并调用**：
-   在 DSH 模型选择器中选中 **Vertex AI (JSON)** 及目标 Gemini 模型即可开始对话。请确保您的 Google Cloud 项目已启用 Vertex AI API（`aiplatform.googleapis.com`）、已绑定有效结算账户并授予服务账号相应的 IAM 权限。
+
+    在 DSH 模型选择器中选中 **Vertex AI (JSON)** 及目标 Gemini 模型即可开始对话。请确保您的 Google Cloud 项目已启用 Vertex AI API（`aiplatform.googleapis.com`）、已绑定有效结算账户并授予服务账号相应的 IAM 权限。
 
 ### 多模态图像限制
 图像输入通过 DSH 附件服务进行标准化读取，单张图片编码前上限为 `4 MiB`，单次请求 Base64 图像总载荷上限为 `16 MiB`。
