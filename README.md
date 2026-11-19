@@ -6,6 +6,12 @@
 
 A native Google Cloud Vertex AI provider plugin for DeepSeek Harness (DSH). Enables direct, tenant-isolated model inference against official Google Cloud Vertex AI endpoints using standard IAM service-account credentials (`BYOC`).
 
+## Releases
+
+[v0.1.0 — Initial Public Release](https://github.com/VectorDuct/dsh-vertex-plugin/releases/tag/v0.1.0). Download the compiled `dsh-vertex-json-0.1.0.tgz` and `SHA256SUMS`. Install through DSH as described below.
+
+Verify downloaded assets against `SHA256SUMS` before installation (Linux: `sha256sum -c SHA256SUMS`).
+
 ## Capabilities & Scope
 
 - **Target Runtime**: Engineered for `DSH 0.2.2-rc.2` on `Node.js 24.9+` (Linux and Windows).

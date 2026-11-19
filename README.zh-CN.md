@@ -6,6 +6,12 @@
 
 面向 DeepSeek Harness (DSH) 的原生 Google Cloud Vertex AI 接入插件。支持使用用户自有的 Google Cloud 项目与 IAM 服务账号 JSON 密钥（`BYOC`），直接连接 Google 官方 OAuth 2.0 与 Vertex AI 端点执行模型推理。
 
+## 正式发布
+
+[v0.1.0 — 首个公开版本](https://github.com/VectorDuct/dsh-vertex-plugin/releases/tag/v0.1.0)。下载编译后的 `dsh-vertex-json-0.1.0.tgz` 和 `SHA256SUMS`，按下文说明通过 DSH 安装。
+
+安装前请按 `SHA256SUMS` 校验下载包（Linux：`sha256sum -c SHA256SUMS`）。
+
 ## 核心能力与兼容范围
 
 - **目标运行环境**：适配 `DSH 0.2.2-rc.2` 与 `Node.js 24.9+`（支持 Linux 与 Windows）。
